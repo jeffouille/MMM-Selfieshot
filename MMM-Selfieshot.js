@@ -195,6 +195,13 @@ Module.register("MMM-Selfieshot", {
 		if (showing) win.classList.toggle("shown");
 
 		const loop = (count) => {
+
+			//EDF Add NOTIFICATION at the beginning oh shoot
+			if(count == countdown) {
+				this.sendNotification("SELFIE_LAUNCHED", {});
+				console.log("SELFIE_LAUNCHED : countdown="+countdown + " - count="+count);
+			}
+			// END EDF
 			var c = document.querySelector("#SELFIE .count");
 			c.innerHTML = count;
 			if (count < 0) {
